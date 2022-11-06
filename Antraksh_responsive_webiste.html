@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Antariksh:The Myestry</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        cursor: pointer;
+        background-color: black;
+      }
+
+      .nav-list {
+        width: 70%;
+        /* background-color: black; */
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-list li {
+        list-style: none;
+        padding: 26px 30px;
+        font-family: "Ubuntu", sans-serif;
+      }
+
+      .nav-list li a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+      }
+
+      .nav-list li a:hover {
+        text-decoration: none;
+        color: grey;
+      }
+
+      .rightnav {
+        /* background-color: violet; */
+        width: 30%;
+
+        /* display: flex; */
+        text-align: right;
+        padding: 0 23px;
+      }
+      .logo {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .logo img {
+        width: 36%;
+        margin: 7px;
+        border: 3px solid white;
+        border-radius: 50px;
+      }
+      #search {
+        padding: 5px;
+        font-size: 15px;
+        border: 3px solid gray;
+        border-radius: 9px;
+      }
+      .burger {
+        display: none;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 15px;
+      }
+      .line {
+        width: 33px;
+        background-color: white;
+        height: 4px;
+        margin: 5px 5px;
+      }
+
+      .background {
+        background: rgba(0, 0, 0, 0.7)
+          url("https://source.unsplash.com/900x900/?space");
+         
+        background-size: cover;
+        background-blend-mode: darken;
+      }
+
+      .box-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 70%;
+        margin: auto;
+        height: 80%;
+      }
+      .firstSection {
+        height: 100vh;
+      }
+      .firstHalf {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .secondHalf {
+        width: 30%;
+      }
+
+      .SecondHalf img {
+        /* width: 10%; */
+        width: 150px;
+        height: 150px;
+        border-radius: 150px;
+        display: block;
+        margin: auto;
+      }
+
+      .text-big {
+        font-size: 40px;
+      }
+      .text-small {
+        font-size: 16px;
+      }
+      .btn {
+        font-size: 20px;
+        cursor: pointer;
+        background: none;
+        color: white;
+        border: 3px solid white;
+        border-radius: 8px;
+        padding: 6px 4px;
+
+        margin: 5px 10px;
+      }
+      .btn-sm {
+        font-size: 14px;
+        padding: 5px 8px;
+        border: 1px solid white;
+      }
+      .btn-dark {
+        color: black;
+        border: 3px solid black;
+      }
+      .section {
+        /* height: 350px; */
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        max-width: 80%;
+        margin: auto;
+        font-family: "Ubuntu", sans-serif;
+        padding: 10px;
+      }
+      .paras {
+        padding: 5px;
+      }
+
+      .section-left {
+        flex-direction: row-reverse;
+      }
+
+      .sectionTag {
+        padding: 16px 0px;
+      }
+
+      .sectionSubTag {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .thumbnail img {
+        width: 250px;
+        border: 2px solid black;
+        border-radius: 26px;
+        margin-top: 19px;
+      }
+
+      .contact {
+        background-color: rgb(211, 221, 224);
+        height: 733px;
+      }
+
+      .text-center {
+        text-align: center;
+        padding-top: 15px;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 35px;
+      }
+
+      .form {
+        max-width: 62%;
+        margin: 25px auto;
+      }
+
+      .form-Input {
+        margin: 14px 0;
+        padding: 5px 13px;
+        width: 100%;
+        font-size: 19px;
+        border: 2px solid grey;
+        border-radius: 6px;
+      }
+
+      .text-footer {
+        text-align: center;
+        padding: 30px 0;
+        font-family: "Ubuntu", sans-serif;
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+      }
+
+      /* Media query */
+      @media only screen and (max-width: 1200px) {
+        .nav-list {
+          flex-direction: column;
+        }
+        .navbar {
+          flex-direction: column;
+          transition: all 0.7s ease-out;
+          height: 447px;
+        }
+        .rightnav {
+          text-align: center;
+          justify-content: center;
+          margin-left: 20%;
+        }
+        #search {
+          width: 100%;
+        }
+        .burger {
+          display: block;
+        }
+        .h-nav-resp {
+          height: 70px;
+        }
+        .v-class-resp {
+          opacity: 0;
+        }
+        .box-main {
+          flex-direction: column-reverse;
+          max-width: 100%; 
+         
+        }
+        .section {
+          flex-direction: column-reverse;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar background h-nav-resp">
+      <ul class="nav-list v-class-resp">
+        <div class="logo">
+          <!-- <img  src="img1.jpg" alt="This is an image of a laptop"> -->
+          <img
+            src="https://source.unsplash.com/900x900/?stars,setallite"
+            alt="This is an image of a scientest"
+          />
+        </div>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contect Us</a></li>
+      </ul>
+      <span class="rightnav v-class-resp">
+        <input type="text" name="search" id="search" />
+        <button class="btn btn-sm">Search</button>
+      </span>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+
+    <section class="background firstSection">
+      <div class="box-main">
+        <div class="firstHalf">
+          <p class="text-big">The Space Is Full Of Myestry</p>
+          <p class="text-small">
+            The Big Bang Theory is the leading explanation for how the universe began. Simply put, it says the universe as we know it started with an infinitely hot and dense single point that inflated and stretched — first at unimaginable speeds, and then at a more measurable rate — over the next 13.8 billion years to the still-expanding cosmos that we know today.
+        
+            Existing technology doesn't yet allow astronomers to literally peer back at the universe's birth, much of what we understand about the Big Bang comes from mathematical formulas and models. Astronomers can, however, see the "echo" of the expansion through a phenomenon known as the cosmic microwave background.
+          </p>
+
+          <div class="buttons">
+            <button class="btn">Subscribe</button>
+            <button class="btn">Watch Video</button>
+          </div>
+        </div>
+
+        <div class="SecondHalf">
+          <img
+            src="https://source.unsplash.com/900x900/?space,stars"
+            alt="This is an image of Galexy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="paras">
+        <p class="sectionTag text-big"> What Is a Black Hole?</p>
+        <p class="sectionSubTag text-small">
+            A black hole is a place in space where gravity pulls so much that even light can not get out. The gravity is so strong because matter has been squeezed into a tiny space. This can happen when a star is dying.
+
+            Because no light can get out, people can't see black holes. They are invisible. Space telescopes with special tools can help find black holes. The special tools can see how stars that are very close to black holes act differently than other stars.
+        </p>
+      </div>
+      <div class="thumbnail">
+        <img
+          src="https://source.unsplash.com/900x900/?night,stars"
+          alt="Black Hole"
+          class="imgFluid"
+        />
+      </div>
+    </section>
+
+    <section class="section section-left" id="about">
+      <div class="paras">
+        <p class="sectionTag text-big">About ISRO</p>
+        <p class="sectionSubTag text-small">
+            India decided to go to space when Indian National Committee for Space Research (INCOSPAR) was set up by the Government of India in 1962. With the visionary Dr Vikram Sarabhai at its helm, INCOSPAR set up the Thumba Equatorial Rocket Launching Station (TERLS) in Thiruvananthapuram for upper atmospheric research.
+        
+            Indian Space Research Organisation, formed in 1969, superseded the erstwhile INCOSPAR. Vikram Sarabhai, having identified the role and importance of space technology in a Nation's development, provided ISRO the necessary direction to function as an agent of development. ISRO then embarked on its mission to provide the Nation space based services and to develop the technologies to achieve the same independently.
+        </p>
+      </div>
+      <div class="thumbnail">
+        <img
+          src="https://source.unsplash.com/900x900/?Isro,Rocket"
+          alt="Isro Rocket"
+          class="imgFluid"
+        />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="paras">
+        <p class="sectionTag text-big"> Star Formation</p>
+        <p class="sectionSubTag text-small">
+            Stars are born within the clouds of dust and scattered throughout most galaxies. A familiar example of such as a dust cloud is the Orion Nebula. Turbulence deep within these clouds gives rise to knots with sufficient mass that the gas and dust can begin to collapse under its own gravitational attraction.
+            A supernova is the biggest explosion that humans have ever seen. Each blast is the extremely bright, super-powerful explosion of a star. A supernova is the biggest explosion that humans have ever seen. Each blast is the extremely bright, super-powerful explosion of a star.
+
+        </p>
+      </div>
+      <div class="thumbnail">
+        <img
+          src="https://source.unsplash.com/900x900/?stars"
+          alt="stars"
+          class="imgFluid"
+        />
+      </div>
+    </section>
+    <hr />
+
+    <section class="contact" id="contact">
+      <h2 class="text-center">Contect Us</h2>
+      <div class="form">
+        <input
+          class="form-Input"
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter Your Name"
+        />
+        <input
+          class="form-Input"
+          type="number"
+          name="phone"
+          id="phone"
+          placeholder="Enter Your Phone Number"
+        />
+        <input
+          class="form-Input"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter Your Email Address"
+        />
+        <textarea
+          class="form-Input"
+          name="text"
+          id="text"
+          cols="30"
+          rows="10"
+          placeholder="Explain Your Ideas About Space"
+        ></textarea>
+        <button class="btn btn-sm btn-dark">Submit</button>
+      </div>
+    </section>
+
+    <footer class="text-footer">
+      Copyright &copy; 2022 www.antarikshclub.com - All rights reserved  (Made by Shakshit Jangra)
+    </footer>
+  </body>
+  <script>
+    burger = document.querySelector(".burger");
+    navbar = document.querySelector(".navbar");
+    navList = document.querySelector(".nav-list");
+    rightnav = document.querySelector(".rightnav");
+
+    burger.addEventListener("click", () => {
+      rightnav.classList.toggle("v-class-resp");
+      navList.classList.toggle("v-class-resp");
+      navbar.classList.toggle("h-nav-resp");
+    });
+  </script>
+</html>
